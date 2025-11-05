@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Delícias da Beh — Nossos Doces</title>
+  <meta name="description" content="Confira os doces artesanais da Delícias da Beh — bolos, brigadeiros, cupcakes e muito mais.">
+
+  <!-- ===== CSS embutido (garante que as imagens e cards fiquem padronizados) ===== -->
+  <style>
+    /* Reset e base */
+    *{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#fff8fb;
+      --lilas:#a855f7;
+      --rosa:#f9a8d4;
+      --dourado:#fcd34d;
+      --accent:#b64b8a;
+      --text:#3a2b3d;
+      --card-w:260px;    /* largura padrão do card */
+      --img-h:200px;     /* altura padrão das imagens (ajuste aqui se quiser maior/menor) */
+      --container-w:1100px;
+    }
+    html,body{height:100%}
+    body{
+      font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:var(--bg);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+
+    /* Container */
+    .container{width:90%;max-width:var(--container-w);margin:0 auto;padding:1rem}
+
+    /* Skip link */
+    .skip-link{
+      position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;
+    }
+    .skip-link:focus{left:1rem;top:1rem;width:auto;height:auto;padding:.5rem 1rem;background:var(--dourado);color:#000;border-radius:6px;z-index:9999}
+
+    /* Header */
+    .site-header{
+      background:linear-gradient(90deg,#c084fc,#f9a8d4,#fde68a);
+      padding:.9rem 0;
+      box-shadow:0 4px 18px rgba(0,0,0,.06);
+      position:sticky;top:0;z-index:20;
+    }
+    .site-header .container{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .brand .logo{height:56px;width:auto}
+    .main-nav ul{list-style:none;display:flex;gap:1rem;align-items:center}
+    .main-nav a{color:var(--text);text-decoration:none;font-weight:600;padding:.3rem .6rem;border-radius:8px}
+    .main-nav a.active, .main-nav a:hover{background:rgba(0,0,0,0.06)}
+
+    /* Hero (se presente) - omitido aqui; este é a página 'doces' direta */
+    main{padding:2rem 0 4rem}
+
+    /* Title/lead */
+    h1{font-size:1.9rem;color:var(--accent);margin-bottom:.5rem}
+    .lead{color:#6b5555;margin-bottom:1rem}
+
+    /* Grid dos cards: usa flex para alto controle */
+    .grid, .doces-grid{
+      display:flex;
+      flex-wrap:wrap;
+      gap:1.25rem;
+      justify-content:center;
+      align-items:flex-start;
+      margin-top:1.25rem;
+    }
+
+    /* Card padrão */
+    .card{
+      width:var(--card-w);
+      max-width:100%;
+      background:#fff;
+      border-radius:12px;
+      box-shadow:0 8px 22px rgba(14,18,30,0.06);
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      transition:transform .22s ease, box-shadow .22s ease;
+      text-align:left;
+    }
+    .card:focus-within, .card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 18px 40px rgba(14,18,30,0.12);
+    }
+
+    /* Imagem padronizada e centralizada */
+    .card img{
+      width:100%;
+      height:var(--img-h);
+      object-fit:cover;
+      display:block;
+      border-bottom:4px solid rgba(249,168,212,0.3);
+    }
+
+    /* Conteúdo do card */
+    .card-body{
+      padding:1rem;
+      display:flex;
+      flex-direction:column;
+      gap:.5rem;
+      flex:1;
+    }
+    .card h2{
+      font-size:1.05rem;
+      color:var(--lilas);
+      margin:0;
+    }
+    .card p{
+      margin:0;color:#5a4a4a;font-size:.95rem;
+    }
+
+    /* Ação / CTA do card (opcional) */
+    .card .meta{
+      margin-top:.6rem;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:.5rem;
+    }
+    .btn{
+      background:var(--lilas);
+      color:#fff;
+      padding:.45rem .8rem;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:600;
+      font-size:.9rem;
+    }
+    .btn.secondary{
+      background:transparent;
+      color:var(--lilas);
+      border:2px solid rgba(168,85,247,0.12);
+    }
+
+    /* Voltar */
+    .voltar{margin-top:1.5rem;text-align:center}
+    .cta{display:inline-block;background:var(--lilas);color:#fff;padding:.6rem 1rem;border-radius:10px;text-decoration:none;font-weight:700}
+
+    /* Footer */
+    .site-footer{padding:1rem 0;background:linear-gradient(90deg,#c084fc,#f9a8d4,#fde68a);text-align:center;margin-top:2.5rem}
+    .site-footer p{color:var(--text);font-size:.95rem}
+
+    /* Responsividade */
+    @media (max-width:920px){
+      :root{ --card-w:220px; --img-h:180px}
+      h1{font-size:1.6rem}
+    }
+    @media (max-width:520px){
+      :root{ --card-w:92%; --img-h:160px }
+      .site-header .container{flex-direction:column;align-items:flex-start;gap:.6rem}
+      .main-nav ul{flex-wrap:wrap;gap:.5rem}
+      h1{font-size:1.4rem}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a href="index.html" class="brand" aria-label="Delícias da Beh — Início">
+        <img src="images/logo.svg" alt="Logotipo Delícias da Beh" class="logo">
+      </a>
+
+      <nav class="main-nav" role="navigation" aria-label="Navegação principal">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="doces.html" class="active" aria-current="page">Doces</a></li>
+          <li><a href="contato.html">Contato</a></li>
+           <li><a href="sobre.html">Sobre</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo" class="container" role="main" aria-labelledby="page-title">
+    <h1 id="page-title">Nossas Delícias</h1>
+    <p class="lead">Cada doce é feito com carinho e ingredientes selecionados 💖</p>
+
+    <section class="doces-grid" aria-label="Lista de doces">
+      <!-- Card 1 -->
+      <article class="card" aria-labelledby="d1-title">
+        <img src="https://images.unsplash.com/photo-1635888070574-beb32aa9b06d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1469" alt="Bolo decorado com cobertura de chocolate">
+        <div class="card-body">
+          <h2 id="d1-title">Bolo de Chocolate</h2>
+          <p>Camadas macias de massa com recheio cremoso e cobertura de ganache — porções sob encomenda.</p>
+          <div class="meta" aria-hidden="true">
+             <a href="contato.html" class="btn">Encomendar</a>
+            <a href="#" class="btn secondary">Detalhes</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="card" aria-labelledby="d2-title">
+        <img src="https://plus.unsplash.com/premium_photo-1668623144905-6f47683e29b6?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1472" alt="Brigadeiros gourmet em caixa">
+        <div class="card-body">
+          <h2 id="d2-title">Brigadeiro Gourmet</h2>
+          <p>Feitos com chocolate belga — sabores: tradicional, pistache, leite Ninho e mais.</p>
+          <div class="meta" aria-hidden="true">
+            <a href="contato.html" class="btn">Encomendar</a>
+            <a href="#" class="btn secondary">Detalhes</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="card" aria-labelledby="d3-title">
+        <img src="https://images.unsplash.com/photo-1615557509870-98972c5e1396?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=774" alt="Cupcake decorado com cobertura floral">
+        <div class="card-body">
+          <h2 id="d3-title">Cupcake Floral</h2>
+          <p>Coloridos e delicados — perfeitos para festas, lembrancinhas e eventos especiais.</p>
+          <div class="meta" aria-hidden="true">
+             <a href="contato.html" class="btn">Encomendar</a>
+            <a href="#" class="btn secondary">Detalhes</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Exemplo: adicione quantos cards quiser -->
+    </section>
+
+    <div class="voltar">
+      <a href="index.html" class="cta" aria-label="Voltar para a página inicial">← Voltar ao início</a>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2025 Delícias da Beh — Confeitaria artesanal</p>
+    </div>
+  </footer>
+
+  <!-- Pequeno script para acessibilidade e fallback de imagens locais -->
+  <script>
+    // Se quiser garantir que imagens remotas carreguem, substitua por placeholders locais caso erro
+    document.querySelectorAll('.card img').forEach(img=>{
+      img.addEventListener('error', ()=> {
+        // placeholder embutido leve (SVG data URI) para evitar solicitações adicionais
+        img.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600"><rect width="100%" height="100%" fill="%23fde8f4"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="%23b64b8a" font-family="Arial" font-size="24">Imagem indisponível</text></svg>';
+        img.style.objectFit = 'cover';
+      });
+    });
+
+    // Small keyboard focus improvement: allow Enter on card to open first button (Encomendar)
+    document.querySelectorAll('.card').forEach(card=>{
+      card.setAttribute('tabindex','0');
+      card.addEventListener('keydown', (e)=>{
+        if(e.key === 'Enter'){
+          const btn = card.querySelector('.btn');
+          if(btn) btn.click();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

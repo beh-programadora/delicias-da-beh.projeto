@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Delícias da Beh — Confeitaria Artesanal</title>
+  <meta name="description" content="Delícias da Beh — confeitaria artesanal que combina sabor, beleza e carinho em cada doce. Bolos, brigadeiros e cupcakes feitos com amor.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Pular para o conteúdo principal</a>
+
+  <!-- ======== HEADER ======== -->
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <img src="images/logo.svg" alt="Logotipo Delícias da Beh" class="logo">
+      </a>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <ul id="menu-list">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="doces.html">Doces</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+      <div class="controls">
+        <button id="contrast-toggle" aria-pressed="false">Alto Contraste</button>
+        <button id="theme-toggle" aria-pressed="false">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======== MAIN ======== -->
+  <main id="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+      <div class="container">
+        <div class="hero-text">
+          <h1>Delícias da Beh 🍰</h1>
+          <p class="lead">Uma experiência artesanal que transforma ingredientes simples em momentos inesquecíveis.</p>
+          <a href="doces.html" class="cta">Explorar Doces</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre -->
+<section id="sobre" class="container sobre">
+  <h2>Sobre nós</h2>
+  <p>
+    A <strong>Delícias da Beh</strong> é mais do que uma confeitaria — é um pedacinho de amor em forma de doce.  
+    Criamos experiências únicas com sabores que encantam e tornam cada momento inesquecível.
+  </p>
+
+  <div class="valores-grid">
+    <div class="valor">
+      <img src="https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=387" alt="Ícone de cupcake representando arte em confeitaria">
+      <h3>Arte em Confeitaria</h3>
+      <p>Transformamos cada doce em uma pequena obra de arte, cheia de detalhes e sabor.</p>
+    </div>
+    <div class="valor">
+      <img src="https://images.unsplash.com/photo-1702982852429-e0d0b27eb990?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=870" alt="Ícone de brigadeiro representando sabor brasileiro">
+      <h3>Sabor Brasileiro</h3>
+      <p>Receitas tradicionais com um toque moderno — do brigadeiro gourmet ao bolo caseiro perfeito.</p>
+    </div>
+    <div class="valor">
+      <img src="https://images.unsplash.com/photo-1713603193316-5e6f46193fb2?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=870" alt="Ícone de bolo representando celebrações">
+      <h3>Momentos Inesquecíveis</h3>
+      <p>Fazemos parte das suas comemorações com doçura, carinho e muito capricho.</p>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Contato -->
+    <section id="contato" class="container contato">
+      <h2>Fale Conosco</h2>
+      <p>Tem um evento, quer fazer um pedido especial ou apenas dizer “oi”? Envie uma mensagem 💌</p>
+      <form id="contact-form" aria-label="Formulário de contato" novalidate>
+        <label for="name">Nome</label>
+        <input id="name" name="name" type="text" placeholder="Seu nome completo" required>
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="seu@email.com" required>
+
+        <label for="message">Mensagem</label>
+        <textarea id="message" name="message" rows="4" placeholder="Digite sua mensagem..." required></textarea>
+
+        <button type="submit">Enviar</button>
+        <p id="form-status" role="status" aria-live="polite" tabindex="-1"></p>
+      </form>
+    </section>
+  </main>
+
+  <!-- ======== FOOTER ======== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Delícias da Beh — Confeitaria Artesanal • Feito com 💖 em Florianópolis</p>
+      <p><small>Acessibilidade • Versionamento Semântico • Deploy Otimizado</small></p>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
