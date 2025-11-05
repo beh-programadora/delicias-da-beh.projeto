@@ -1,1 +1,461 @@
+/* ================================
+   Estilo principal — Delícias da Beh
+   Tema: lilás, rosa bebê e dourado
+   ================================ */
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Corpo e tipografia */
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #3a2b3d;
+  background-color: #fff8fb;
+  line-height: 1.6;
+}
+
+/* Container padrão */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ================================
+   Cabeçalho e navegação
+   ================================ */
+header {
+  background: linear-gradient(90deg, #c084fc, #f9a8d4, #fde68a);
+  color: #4b006e;
+  padding: 1.2rem 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  width: 140px;
+  transition: transform 0.3s ease;
+}
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* Navegação */
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #4b006e;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+.main-nav a:hover,
+.main-nav a:focus {
+  color: #fff;
+}
+
+/* Botões de controle */
+.controls button {
+  background: #fcd34d;
+  border: none;
+  color: #4b006e;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.controls button:hover {
+  background: #fde68a;
+  transform: translateY(-2px);
+}
+
+/* ================================
+   Seção hero (principal)
+   ================================ */
+.hero {
+  text-align: center;
+  padding: 5rem 1rem;
+  background: linear-gradient(180deg, #fdf2f8, #faf5ff);
+}
+
+.hero h1 {
+  color: #9333ea;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #6b21a8;
+  margin-bottom: 2rem;
+}
+
+.cta {
+  background: #a855f7;
+  color: #fff;
+  padding: 0.8rem 1.6rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.cta:hover {
+  background: #7e22ce;
+  transform: translateY(-2px);
+}
+
+/* ================================
+   Cards de produtos (doces)
+   ================================ */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+.card img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+.card h3 {
+  color: #a855f7;
+  margin-bottom: 0.5rem;
+}
+.card p {
+  color: #4b006e;
+  font-size: 0.95rem;
+}
+
+/* ================================
+   Formulário de contato
+   ================================ */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+label {
+  font-weight: 600;
+  color: #6b21a8;
+}
+input, textarea {
+  padding: 0.7rem;
+  border-radius: 8px;
+  border: 2px solid #e9d5ff;
+  outline: none;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+}
+input:focus, textarea:focus {
+  border-color: #a855f7;
+  box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.2);
+}
+button[type="submit"] {
+  background: #fcd34d;
+  color: #4b006e;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem 1.5rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+button[type="submit"]:hover {
+  background: #fde68a;
+  transform: translateY(-2px);
+}
+
+/* ================================
+   Rodapé
+   ================================ */
+footer {
+  background: linear-gradient(90deg, #c084fc, #f9a8d4, #fde68a);
+  text-align: center;
+  color: #4b006e;
+  padding: 1rem;
+  font-size: 0.9rem;
+  margin-top: 3rem;
+}
+
+/* ================================
+   Responsividade
+   ================================ */
+@media (max-width: 768px) {
+  .main-nav ul {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  header .container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+}
+/* === Seção SOBRE === */
+.sobre {
+  text-align: center;
+  padding: 4rem 1rem;
+  background: #fff8fb;
+  border-radius: 2rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+.sobre h2 {
+  font-size: 2rem;
+  color: #b64b8a;
+  margin-bottom: 1.5rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.sobre p {
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  color: #5a4a4a;
+  line-height: 1.7;
+}
+
+/* === Grid de valores === */
+.valores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  justify-items: center;
+}
+
+.valor {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 2rem 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.valor:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* === Ajuste das imagens === */
+.valor img {
+  width: 90px;          /* 🔥 todas as imagens ficam do mesmo tamanho */
+  height: 90px;
+  object-fit: contain;  /* mantém proporção original */
+  margin-bottom: 1rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.valor h3 {
+  color: #b64b8a;
+  margin-bottom: 0.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+}
+
+.valor p {
+  color: #6b5555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+/* ======== TEMA ESCURO ======== */
+body.dark-theme {
+  background-color: #1b1b1b;
+  color: #f5f5f5;
+}
+
+body.dark-theme header,
+body.dark-theme footer {
+  background: linear-gradient(90deg, #3b0764, #581c87, #854d0e);
+  color: #fff;
+}
+
+body.dark-theme .hero {
+  background: #2a2a2a;
+  color: #f5f5f5;
+}
+
+body.dark-theme .container,
+body.dark-theme main,
+body.dark-theme section {
+  background-color: transparent;
+  color: #f5f5f5;
+}
+
+body.dark-theme .card,
+body.dark-theme .valor {
+  background-color: #2e2e2e;
+  color: #f5f5f5;
+  border: 1px solid #444;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-theme .card img,
+body.dark-theme .valor img {
+  filter: brightness(0.9) contrast(1.1);
+  border-radius: 8px;
+}
+
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3 {
+  color: #e9d5ff;
+}
+
+body.dark-theme a {
+  color: #d8b4fe;
+}
+
+body.dark-theme a.cta {
+  background-color: #9333ea;
+  color: white;
+}
+
+body.dark-theme a.cta:hover {
+  background-color: #a855f7;
+}
+
+body.dark-theme input,
+body.dark-theme textarea {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+body.dark-theme button {
+  background-color: #a855f7;
+  color: #fff;
+  border: none;
+}
+
+body.dark-theme button:hover {
+  background-color: #c084fc;
+}
+
+/* ======== ALTO CONTRASTE ======== */
+body.high-contrast {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+body.high-contrast header,
+body.high-contrast footer {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+body.high-contrast a,
+body.high-contrast button,
+body.high-contrast input,
+body.high-contrast textarea {
+  background: #ff0 !important;
+  color: #000 !important;
+  border: 2px solid #fff !important;
+}
+
+body.high-contrast img {
+  filter: grayscale(100%) contrast(180%);
+}
+
+/* ======== BOTÕES DE CONTROLE ======== */
+.controls {
+  display: flex;
+  gap: 10px;
+}
+
+.controls button {
+  background: #e5d4ff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.controls button:hover {
+  background: #c084fc;
+  color: #fff;
+}
+/* === SOBRE === */
+.sobre {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.sobre h1 {
+  color: #d46a91;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.sobre-conteudo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  text-align: left;
+}
+
+.sobre-conteudo .texto {
+  flex: 1 1 400px;
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.8;
+}
+
+.sobre-conteudo .imagem {
+  flex: 1 1 400px;
+  text-align: center;
+}
+
+.sobre-conteudo img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.sobre-conteudo img:hover {
+  transform: scale(1.05);
+}
 
