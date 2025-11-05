@@ -1,1 +1,99 @@
+:root {
+  --rosa: #f9cce7;
+  --lilas: #d9c2f0;
+  --azul: #c2e0f9;
+  --offwhite: #fffafc;
+  --texto: #444;
+  --destaque: #b48fd9;
+  --escuro-bg: #2a2a2a;
+  --escuro-texto: #f9f9f9;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--offwhite);
+  color: var(--texto);
+  margin: 0;
+  transition: 0.3s ease;
+}
+
+header {
+  background: linear-gradient(to right, var(--rosa), var(--lilas), var(--azul));
+  color: #333;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+}
+nav a.ativo {
+  color: var(--destaque);
+}
+
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: var(--rosa);
+  color: #333;
+}
+
+.btn {
+  background: var(--lilas);
+  border: none;
+  padding: 10px 25px;
+  color: #fff;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.btn:hover {
+  background: var(--destaque);
+}
+
+.grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background: var(--azul);
+  margin-top: 30px;
+}
+
+body.dark {
+  background: var(--escuro-bg);
+  color: var(--escuro-texto);
+}
+body.dark header {
+  background: #444;
+}
+body.dark .card {
+  background: #333;
+}
 
